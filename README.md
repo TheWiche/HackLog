@@ -15,7 +15,7 @@ Portal técnico y bitácora interactiva de auditoría de seguridad sobre dos esc
 
 ## 🚀 Despliegue en Vivo (Live Demo)
 Puedes consultar el portal interactivo y la documentación completa en línea a través de GitHub Pages:  
-👉 **[Ver Portal SecDocs Online](https://TheWiche.github.io/ethical-hacking-ctf-guide/)**
+👉 **[Ver Guía Nelson Cotes Online](https://TheWiche.github.io/ethical-hacking-ctf-guide/)**
 
 ---
 
@@ -44,3 +44,4 @@ Puedes consultar el portal interactivo y la documentación completa en línea a 
 Todas las pruebas de penetración documentadas en este repositorio se realizaron exclusivamente en entornos controlados con autorización explícita para fines académicos de acuerdo con:
 - **Ley 1273 de 2009 (Colombia):** Tipificación de delitos informáticos (Arts. 269A - 269F).
 - **Ley 1581 de 2012 (Habeas Data):** Protección y custodia de datos personales.
+
