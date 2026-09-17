@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HackLog // Offensive Security & Red Team Field Notes</title>
+  <title>HackLog / Laboratorio 1 — CTF Web & Escalada SUID</title>
   
-  <!-- Favicon & Fonts -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/></svg>"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
@@ -96,16 +97,16 @@
   <!-- ================= TOP HEADER NAVIGATION ================= -->
   <header class="fixed top-0 left-0 right-0 h-16 bg-surface-card/90 backdrop-blur-md border-b border-surface-border z-50 flex items-center justify-between px-4 lg:px-8">
     <!-- Brand / Logo -->
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 via-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
-        <span class="material-symbols-outlined text-[24px]">terminal</span>
-      </div>
-      <div class="flex flex-col">
-        <div class="flex items-center gap-2">
-          <span class="font-extrabold text-xl tracking-tight text-surface-text">Hack<span class="text-brand-600 dark:text-brand-400">Log</span></span>
+    <!-- Brand Breadcrumb: Logo + HackLog / Laboratorio 1 -->
+    <div class="flex items-center gap-2 sm:gap-2.5 select-none">
+      <a href="./" class="flex items-center gap-2.5 group" title="Ir al Hub de HackLog">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 via-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200 shrink-0">
+          <span class="material-symbols-outlined text-[24px]">terminal</span>
         </div>
-        <span class="text-xs text-surface-muted hidden sm:inline-block font-mono">Offensive Security & Red Team Field Notes</span>
-      </div>
+        <span class="font-extrabold text-xl tracking-tight text-surface-text group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Hack<span class="text-brand-600 dark:text-brand-400">Log</span></span>
+      </a>
+      <span class="text-surface-muted text-base sm:text-lg font-light font-mono">/</span>
+      <span class="font-mono text-xs sm:text-sm font-bold text-brand-600 dark:text-brand-400 tracking-tight whitespace-nowrap">Laboratorio 1</span>
     </div>
 
     <!-- Quick search trigger -->

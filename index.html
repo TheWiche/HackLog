@@ -6,6 +6,10 @@
   <title>HackLog // Repositorio de Auditorías & Laboratorios</title>
   <meta name="description" content="Portal centralizado y catálogo oficial de laboratorios prácticos de seguridad ofensiva, auditorías web y análisis forense.">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,18 +102,13 @@
 
   <!-- ================= TOP HEADER ================= -->
   <header class="sticky top-0 z-50 h-16 bg-surface-card/90 backdrop-blur-md border-b border-surface-border flex items-center justify-between px-4 sm:px-8">
-    <!-- Brand -->
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 via-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+    <!-- Brand: Logo and HackLog only -->
+    <a href="./" class="flex items-center gap-3 group select-none">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 via-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
         <span class="material-symbols-outlined text-[24px]">terminal</span>
       </div>
-      <div class="flex flex-col">
-        <div class="flex items-center gap-2">
-          <span class="font-extrabold text-xl tracking-tight text-surface-text">Hack<span class="text-brand-600 dark:text-brand-400">Log</span></span>
-        </div>
-        <span class="text-xs text-surface-muted hidden sm:inline-block font-mono">Offensive Security & Red Team Field Notes</span>
-      </div>
-    </div>
+      <span class="font-extrabold text-xl tracking-tight text-surface-text">Hack<span class="text-brand-600 dark:text-brand-400">Log</span></span>
+    </a>
 
     <!-- Controls -->
     <div class="flex items-center gap-3">
