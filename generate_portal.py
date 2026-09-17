@@ -446,18 +446,14 @@
                   <span>Copiar</span>
                 </button>
               </div>
-              <pre class="p-4 overflow-x-auto text-[13px] leading-relaxed"><code>gobuster dir -u http://134.209.63.29/ -w /usr/share/wordlists/dirb/common.txt -x php,html,txt -t 30</code></pre>
+              <pre class="p-4 overflow-x-auto text-[13px] leading-relaxed"><code>gobuster dir -u http://134.209.63.29/ -w /usr/share/wordlists/dirb/common.txt -x php,html,txt -t 5 --timeout 30s --delay 150ms</code></pre>
             </div>
 
             <!-- Evidence Images Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <div class="space-y-4 pt-2">
               <div class="space-y-1.5">
-                <img src="assets/images/s1_recon_gobuster_1.png" alt="Gobuster escaneo inicial" class="w-full rounded-xl border border-surface-border img-zoom" onclick="openLightbox(this.src, 'Gobuster: Descubrimiento inicial de rutas críticas')"/>
-                <p class="text-[11px] text-surface-muted text-center italic">Evidencia 1.1: Descubrimiento de /admin, /login, /cart y /catalog</p>
-              </div>
-              <div class="space-y-1.5">
-                <img src="assets/images/s1_recon_gobuster_2.jpg" alt="Gobuster escaneo final" class="w-full rounded-xl border border-surface-border img-zoom" onclick="openLightbox(this.src, 'Gobuster: Conclusión de escaneo de directorios')"/>
-                <p class="text-[11px] text-surface-muted text-center italic">Evidencia 1.2: Detección de /profile, /register y /search</p>
+                <img src="assets/images/s1_recon_gobuster_kali.png" alt="Gobuster escaneo final en Kali Linux" class="w-full rounded-xl border border-surface-border img-zoom shadow-md" onclick="openLightbox(this.src, 'Gobuster v3.8.2 en Kali Linux: Ejecución con control de tasa (-t 5, delay 150ms, timeout 30s) completada al 100% con 9 rutas descubiertas')"/>
+                <p class="text-[11px] text-surface-muted text-center italic">Evidencia 1.1: Terminal de Kali Linux ejecutando el comando optimizado (-t 5, --delay 150ms, --timeout 30s) sin errores ni saturación, descubriendo las 9 rutas críticas de TechNova Store</p>
               </div>
             </div>
 
@@ -1193,7 +1189,7 @@ NOTA IMPORTANTE:
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
             <div class="p-4 rounded-xl bg-surface-card border border-surface-border space-y-2">
               <span class="font-bold text-rose-600 block">SITIO 1: RECON & SQLI</span>
-              <pre class="p-3 rounded-lg bg-slate-900 text-slate-100 overflow-x-auto select-all"><code>gobuster dir -u http://134.209.63.29/ -w /usr/share/wordlists/dirb/common.txt -x php,html,txt -t 30
+              <pre class="p-3 rounded-lg bg-slate-900 text-slate-100 overflow-x-auto select-all"><code>gobuster dir -u http://134.209.63.29/ -w /usr/share/wordlists/dirb/common.txt -x php,html,txt -t 5 --timeout 30s --delay 150ms
 
 curl -s "http://134.209.63.29/search?q=' OR '1'='1"
 
