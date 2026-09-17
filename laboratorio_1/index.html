@@ -132,9 +132,10 @@
 
   <header class="fixed top-0 left-0 right-0 h-16 bg-surface-card/90 backdrop-blur-md border-b border-surface-border z-50 flex items-center justify-between px-4 lg:px-8">
     <!-- Back to Hub Button -->
-      <a href="../" class="group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-inset hover:bg-brand-500/10 text-surface-text border border-surface-border hover:border-brand-500/30 text-xs font-mono font-bold transition-all shadow-xs shrink-0" title="Volver al Hub de Laboratorios">
-        <span class="material-symbols-outlined text-[18px] text-brand-500 group-hover:-translate-x-1 transition-transform duration-200">arrow_back</span>
-        <span class="hidden sm:inline">HackLog Hub</span>
+      <!-- Dynamic Adaptive Back Button (Compact icon, expands smoothly on hover) -->
+      <a href="../" class="group flex items-center justify-center h-10 px-2.5 rounded-xl bg-surface-inset hover:bg-brand-500/10 text-surface-text border border-surface-border hover:border-brand-500/40 text-xs font-mono font-bold transition-all duration-300 shadow-xs shrink-0 hover:px-3" title="Volver al Hub de Laboratorios">
+        <span class="material-symbols-outlined text-[19px] text-brand-500 group-hover:-translate-x-0.5 transition-transform duration-200">arrow_back</span>
+        <span class="hidden sm:inline-block max-w-0 group-hover:max-w-[80px] opacity-0 group-hover:opacity-100 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out group-hover:ml-1.5">Hub</span>
       </a>
 
       <!-- Brand / Logo -->
@@ -145,7 +146,6 @@
       <div class="flex flex-col">
         <div class="flex items-center gap-2">
           <span class="font-extrabold text-xl tracking-tight text-surface-text">Hack<span class="text-brand-600 dark:text-brand-400">Log</span></span>
-          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 border border-brand-200 dark:border-brand-800">v2.0 OPS</span>
         </div>
         <span class="text-xs text-surface-muted hidden sm:inline-block font-mono">Offensive Security & Red Team Field Notes</span>
       </div>
