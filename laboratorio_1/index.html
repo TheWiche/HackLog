@@ -88,12 +88,48 @@
       transform: scale(1.015);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     }
+  
+    @media print {
+      header, aside, #reading-progress, #lightbox, #theme-toggle, footer a {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .pt-16 {
+        padding-top: 0 !important;
+      }
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      article, section {
+        page-break-inside: avoid;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+      }
+    }
   </style>
+  <!-- Anti-FOUC Early Theme Script -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
 </head>
 
 <body class="bg-surface-canvas text-surface-text font-sans antialiased selection:bg-brand-600 selection:text-white transition-colors duration-200">
 
   <!-- ================= TOP HEADER NAVIGATION ================= -->
+    <!-- Reading Progress Indicator -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-500 via-indigo-500 to-rose-500 z-[60] transition-all duration-100" style="width: 0%"></div>
+
   <header class="fixed top-0 left-0 right-0 h-16 bg-surface-card/90 backdrop-blur-md border-b border-surface-border z-50 flex items-center justify-between px-4 lg:px-8">
     <!-- Back to Hub Button -->
       <a href="../" class="group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-inset hover:bg-brand-500/10 text-surface-text border border-surface-border hover:border-brand-500/30 text-xs font-mono font-bold transition-all shadow-xs shrink-0" title="Volver al Hub de Laboratorios">
@@ -142,6 +178,12 @@
 <!-- Dynamic Theme Switcher with Smooth Rotation -->
       <button id="theme-toggle" class="group relative p-2.5 rounded-xl bg-surface-inset hover:bg-surface-border text-surface-muted hover:text-brand-500 border border-surface-border transition-all duration-300 shadow-xs active:scale-90" title="Alternar tema claro / oscuro">
         <span id="theme-icon" class="material-symbols-outlined text-[20px] transition-transform duration-500 ease-in-out group-hover:rotate-45">dark_mode</span>
+      </button>
+
+      <!-- Print / PDF Export button -->
+      <button onclick="window.print()" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-inset hover:bg-surface-border text-surface-text text-xs font-mono font-semibold border border-surface-border transition-all shadow-xs" title="Imprimir o guardar como PDF">
+        <span class="material-symbols-outlined text-[16px] text-brand-500">picture_as_pdf</span>
+        <span>Exportar</span>
       </button>
 
       <!-- GitHub Repo Link -->
@@ -1211,6 +1253,12 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
           <p>© 2026 Universidad de La Guajira · Facultad de Ingeniería · Hacking Ético</p>
           <p>Proyecto de Auditoría Técnica <strong>HackLog</strong> · Nelson Wilinton Cotes Yepez (0182210015) & Carlos Andrés Martínez Jáuregui (0002620001)</p>
           <p class="font-mono text-[11px] text-surface-muted pt-1">Docente: Luis Ángel Ramírez Mendoza</p>
+                  <p class="pt-3">
+            <a href="../" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-inset hover:bg-surface-border text-surface-text border border-surface-border text-xs font-mono font-bold transition-all shadow-xs group">
+              <span class="material-symbols-outlined text-[16px] text-brand-500 group-hover:-translate-x-1 transition-transform">arrow_back</span>
+              <span>Regresar al Hub de Proyectos HackLog</span>
+            </a>
+          </p>
         </footer>
 
       </div>
@@ -1218,7 +1266,7 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
   </div>
 
   <!-- ================= IMAGE LIGHTBOX MODAL ================= -->
-  <div id="lightbox" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden flex flex-col items-center justify-center p-4" onclick="closeLightbox()">
+  <div id="lightbox" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden flex-col items-center justify-center p-4" onclick="closeLightbox()">
     <div class="relative max-w-6xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
       <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white/80 hover:text-white flex items-center gap-1 font-mono text-xs">
         <span class="material-symbols-outlined text-[20px]">close</span>
@@ -1244,12 +1292,16 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
     }
 
     function openLightbox(src, caption) {
+      const lb = document.getElementById('lightbox');
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox-caption').innerText = caption;
-      document.getElementById('lightbox').classList.remove('hidden');
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
     }
     function closeLightbox() {
-      document.getElementById('lightbox').classList.add('hidden');
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
     }
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
@@ -1291,18 +1343,53 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
       });
     }
 
+    // Refined global search: only filters content articles & sections without collapsing containers
     const searchInput = document.getElementById('global-search');
-    searchInput.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      const articles = document.querySelectorAll('article, section');
-      articles.forEach(art => {
-        if (!term || art.innerText.toLowerCase().includes(term)) {
-          art.style.display = '';
-        } else {
-          art.style.display = 'none';
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase().trim();
+        const targets = document.querySelectorAll('main article, #fundamentos, #metodologia, #matriz-owasp, #marco-legal, #cheatsheet');
+        targets.forEach(el => {
+          if (!term || el.innerText.toLowerCase().includes(term)) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // Scroll progress bar updater
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const prog = document.getElementById('reading-progress');
+      if (prog) prog.style.width = scrolled + '%';
+    });
+
+    // Sidebar ScrollSpy: highlight active section while scrolling
+    const navLinks = document.querySelectorAll('aside nav a.nav-link');
+    const observedSections = document.querySelectorAll('section[id], article[id]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('bg-brand-500/10', 'text-brand-600', 'dark:text-brand-400', 'font-bold');
+              link.classList.remove('text-surface-muted');
+            } else {
+              link.classList.remove('bg-brand-500/10', 'text-brand-600', 'dark:text-brand-400', 'font-bold');
+              link.classList.add('text-surface-muted');
+            }
+          });
         }
       });
-    });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    observedSections.forEach(sec => observer.observe(sec));
 
     document.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
