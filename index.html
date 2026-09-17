@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nelson Cotes // Guía de Hacking Ético & CTF Playbook</title>
+  <title>HackLog // Offensive Security & Red Team Field Notes</title>
   
   <!-- Favicon & Fonts -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/></svg>"/>
@@ -65,7 +65,6 @@
       --text-muted: #94a3b8;
     }
     
-    /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -81,7 +80,6 @@
       background: #334155;
     }
     
-    /* Lightbox smooth zoom */
     .img-zoom {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: zoom-in;
@@ -99,15 +97,15 @@
   <header class="fixed top-0 left-0 right-0 h-16 bg-surface-card/90 backdrop-blur-md border-b border-surface-border z-50 flex items-center justify-between px-4 lg:px-8">
     <!-- Brand / Logo -->
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
-        <span class="material-symbols-outlined text-[24px]">security</span>
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 via-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+        <span class="material-symbols-outlined text-[24px]">terminal</span>
       </div>
       <div class="flex flex-col">
         <div class="flex items-center gap-2">
-          <span class="font-bold text-lg tracking-tight text-surface-text">Nelson Cotes</span>
-          <span class="text-xs font-mono font-semibold px-2 py-0.5 rounded-full bg-brand-50 text-brand-600 dark:bg-brand-950 dark:text-brand-400 border border-brand-200 dark:border-brand-800">CTF Lab 2026</span>
+          <span class="font-extrabold text-xl tracking-tight text-surface-text">Hack<span class="text-brand-600 dark:text-brand-400">Log</span></span>
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 border border-brand-200 dark:border-brand-800">v2.0 OPS</span>
         </div>
-        <span class="text-xs text-surface-muted hidden sm:inline-block">Universidad de La Guajira · Hacking Ético</span>
+        <span class="text-xs text-surface-muted hidden sm:inline-block font-mono">Offensive Security & Red Team Field Notes</span>
       </div>
     </div>
 
@@ -125,12 +123,14 @@
       </div>
     </div>
 
-    <!-- Right Controls -->
+    <!-- Right Controls: Atmospheric Status -->
     <div class="flex items-center gap-3">
-      <!-- Target status badge -->
-      <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 text-xs font-mono">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>Guía Nelson Cotes</span>
+      <!-- Target status telemetry badge -->
+      <div class="hidden lg:flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 text-xs font-mono font-semibold">
+        <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+        <span class="tracking-wide">ENGAGEMENT ACTIVE</span>
+        <span class="text-surface-muted">|</span>
+        <span class="text-surface-text font-bold">134.209.63.29</span>
       </div>
 
       <!-- Theme Switcher -->
@@ -139,9 +139,9 @@
       </button>
 
       <!-- GitHub Repo Link -->
-      <a href="https://github.com/TheWiche/ethical-hacking-ctf-guide" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-inset hover:bg-surface-border text-surface-text text-sm font-medium transition-all" title="Ver repositorio en GitHub">
+      <a href="https://github.com/TheWiche/HackLog" target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-inset hover:bg-surface-border text-surface-text text-sm font-medium transition-all" title="Ver repositorio en GitHub">
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        <span class="hidden sm:inline">GitHub</span>
+        <span class="hidden sm:inline">Repo</span>
       </a>
     </div>
   </header>
@@ -152,51 +152,73 @@
     <!-- ================= LEFT SIDEBAR (STICKY NAVIGATION) ================= -->
     <aside class="w-72 fixed top-16 bottom-0 left-0 bg-surface-card border-r border-surface-border overflow-y-auto px-4 py-6 hidden lg:block z-30">
       <div class="mb-4">
-        <div class="flex items-center gap-2 pb-3 border-b border-surface-border">
-          <span class="text-xs font-mono font-bold uppercase tracking-wider text-surface-muted">Temario & Fases</span>
+        <div class="flex items-center justify-between pb-3 border-b border-surface-border">
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-surface-muted">Módulos & Auditorías</span>
+          <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-surface-inset text-brand-600 font-bold">2026-II</span>
         </div>
       </div>
 
       <nav class="space-y-6 text-sm">
-        <!-- 00. General & Fundamentos -->
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 block mb-2 font-mono">00. Fundamentos Teóricos</span>
-          <ul class="space-y-1">
-            <li><a href="#fundamentos" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">menu_book</span><span>OWASP Top 10 & HTTP</span></a></li>
-            <li><a href="#metodologia" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">architecture</span><span>Cadena de Ataque</span></a></li>
+        <!-- SECCIÓN ACTIVA: CORTE 1 -->
+        <div class="p-3 rounded-xl bg-surface-inset border border-surface-border/80">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[14px]">folder_open</span>
+              <span>Corte 1: CTF Web & SUID</span>
+            </span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500" title="Módulo Activo y Completado"></span>
+          </div>
+          
+          <ul class="space-y-1 pl-1">
+            <li><a href="#fundamentos" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>00. Fundamentos OWASP & HTTP</span></a></li>
+            <li><a href="#s1-fase1" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>01. S1: Reconocimiento Gobuster</span></a></li>
+            <li><a href="#s1-fase2" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>02. S1: Detección SQLi Booleano</span></a></li>
+            <li><a href="#s1-fase3" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>03. S1: Exfiltración UNION SQLi</span></a></li>
+            <li><a href="#s1-fase4" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>04. S1: Cracking MD5 (John)</span></a></li>
+            <li><a href="#s1-fase5" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>05. S1: File Upload (MIME Bypass)</span></a></li>
+            <li><a href="#s1-fase6" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>06. S1: RCE & FLAG 1</span></a></li>
+            <li><a href="#s1-fase7" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>07. S1: SUID & PATH Hijack (FLAG 2)</span></a></li>
+            <li><a href="#s2-fase8" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>08. S2: Info Disclosure (phpinfo)</span></a></li>
+            <li><a href="#s2-fase9" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>09. S2: Fuerza Bruta (Hydra)</span></a></li>
+            <li><a href="#s2-fase10" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>10. S2: IDOR en Reportes</span></a></li>
+            <li><a href="#s2-fase11" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>11. S2: Exfiltración FLAG Sitio 2</span></a></li>
+            <li><a href="#s2-fase12" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>12. S2: HTTP PUT Upload (Burp)</span></a></li>
+            <li><a href="#s2-fase13" class="nav-link flex items-center gap-2 px-2 py-1 rounded-md text-xs text-surface-muted hover:text-surface-text hover:bg-surface-card transition-colors"><span>13. S2: RCE & Docker Env Vars</span></a></li>
           </ul>
         </div>
 
-        <!-- 01. Sitio 1 -->
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 block mb-2 font-mono">01. Sitio 1: TechNova Store (P80)</span>
-          <ul class="space-y-1">
-            <li><a href="#s1-fase1" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">travel_explore</span><span>1. Reconocimiento (Gobuster)</span></a></li>
-            <li><a href="#s1-fase2" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">bug_report</span><span>2. Detección SQLi Booleano</span></a></li>
-            <li><a href="#s1-fase3" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">database</span><span>3. Exfiltración UNION SQLi</span></a></li>
-            <li><a href="#s1-fase4" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">key</span><span>4. Cracking MD5 (John)</span></a></li>
-            <li><a href="#s1-fase5" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">upload_file</span><span>5. File Upload (MIME Bypass)</span></a></li>
-            <li><a href="#s1-fase6" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">terminal</span><span>6. RCE & FLAG 1</span></a></li>
-            <li><a href="#s1-fase7" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">admin_panel_settings</span><span>7. SUID & PATH Hijack (FLAG 2)</span></a></li>
-          </ul>
+        <!-- MÓDULOS MODULARES PARA FUTUROS LABORATORIOS -->
+        <div class="space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-surface-muted font-mono block px-1">Próximos Laboratorios</span>
+          
+          <!-- Slot Corte 2 -->
+          <div class="p-3 rounded-xl bg-surface-card border border-surface-border/60 opacity-75 hover:opacity-100 transition-opacity">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-surface-text font-mono flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-amber-500">lan</span>
+                <span>Corte 2: Redes & Active Directory</span>
+              </span>
+              <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-50 text-amber-600 dark:bg-amber-950 dark:text-amber-400 font-bold">Próximo</span>
+            </div>
+            <p class="text-[11px] text-surface-muted">Pivoting, Kerberoasting, BloodHound y evaluación de dominios internos.</p>
+          </div>
+
+          <!-- Slot Corte 3 -->
+          <div class="p-3 rounded-xl bg-surface-card border border-surface-border/60 opacity-75 hover:opacity-100 transition-opacity">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-surface-text font-mono flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-purple-500">memory</span>
+                <span>Corte 3: Buffer Overflow & Binarios</span>
+              </span>
+              <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 dark:bg-purple-950 dark:text-purple-400 font-bold">Próximo</span>
+            </div>
+            <p class="text-[11px] text-surface-muted">Ingeniería inversa, ROP chains, bypass de protecciones y shellcoding.</p>
+          </div>
         </div>
 
-        <!-- 02. Sitio 2 -->
+        <!-- SECCIÓN NORMAS & PLAYBOOK -->
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block mb-2 font-mono">02. Sitio 2: Larm182 Solutions (P8080)</span>
-          <ul class="space-y-1">
-            <li><a href="#s2-fase8" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">info</span><span>8. Info Disclosure (phpinfo)</span></a></li>
-            <li><a href="#s2-fase9" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">password</span><span>9. Fuerza Bruta (Hydra)</span></a></li>
-            <li><a href="#s2-fase10" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">fingerprint</span><span>10. IDOR en Reportes</span></a></li>
-            <li><a href="#s2-fase11" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">flag</span><span>11. Exfiltración FLAG Sitio 2</span></a></li>
-            <li><a href="#s2-fase12" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">http</span><span>12. HTTP PUT Upload (Burp)</span></a></li>
-            <li><a href="#s2-fase13" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">deployed_code</span><span>13. RCE & Variables de Entorno</span></a></li>
-          </ul>
-        </div>
-
-        <!-- 03. Análisis & Marco Legal -->
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 block mb-2 font-mono">03. Análisis & Normativa</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-surface-muted font-mono block mb-2 px-1">Recursos Generales</span>
           <ul class="space-y-1">
             <li><a href="#matriz-owasp" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">grid_view</span><span>14. Tabla Comparativa OWASP</span></a></li>
             <li><a href="#marco-legal" class="nav-link flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-surface-muted hover:text-surface-text hover:bg-surface-inset transition-colors"><span class="material-symbols-outlined text-[16px]">gavel</span><span>15. Marco Legal & Ley 1273</span></a></li>
@@ -211,22 +233,45 @@
       <div class="max-w-5xl mx-auto px-4 sm:px-8 py-10 space-y-16">
         
         <!-- HERO BANNER -->
-        <section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-900 via-brand-800 to-slate-900 text-white p-8 sm:p-10 shadow-xl">
+        <section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-brand-950 text-white p-8 sm:p-10 shadow-2xl border border-slate-800">
           <div class="relative z-10 max-w-3xl space-y-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-brand-200 text-xs font-mono font-semibold border border-white/10">
-              <span class="material-symbols-outlined text-[14px]">verified</span>
-              <span>Laboratorio Evaluativo Oficial · 100 Puntos</span>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 backdrop-blur-md text-rose-300 text-xs font-mono font-semibold border border-rose-500/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>
+              <span>HACKLOG SECURITY AUDIT · CORTE 1 OFICIAL</span>
             </div>
             <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              CTF: Reconocimiento, Explotación & Análisis de Vulnerabilidades Web
+              CTF: Reconocimiento, Explotación & Análisis Forense de Vulnerabilidades
             </h1>
-            <p class="text-brand-100 text-base sm:text-lg leading-relaxed font-normal">
-              Guía técnica exhaustiva y bitácora forense de auditoría ofensiva sobre dos escenarios de producción: <strong>TechNova Store (Puerto 80)</strong> y <strong>Larm182 Solutions (Puerto 8080)</strong>. Cobertura completa del estándar OWASP Top 10:2021, escalada de privilegios y análisis de mitigaciones.
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+              Bitácora de seguridad ofensiva desarrollada para la evaluación técnica sobre los entornos <strong>TechNova Store</strong> (Puerto 80) y <strong>Larm182 Solutions</strong> (Puerto 8080). Análisis exhaustivo de vectores OWASP Top 10, ejecución de código y remediaciones en código.
             </p>
-            <div class="flex flex-wrap items-center gap-4 pt-4 text-xs font-mono text-brand-200">
-              <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">person</span><span>Auditor: Nelson Wilinton Cotes Yepez</span></div>
-              <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">badge</span><span>Código: 0182210015</span></div>
-              <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">school</span><span>Docente: Luis Ángel Ramírez Mendoza</span></div>
+            
+            <!-- Auditores / Integrantes del grupo -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3">
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">badge</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xs font-bold text-white">Nelson Wilinton Cotes Yepez</span>
+                  <span class="text-[11px] font-mono text-slate-400">Código: 0182210015 · Auditor Líder</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">badge</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xs font-bold text-white">Carlos Andrés Martínez Jáuregui</span>
+                  <span class="text-[11px] font-mono text-slate-400">Código: 0002620001 · Auditor Co-investigador</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 pt-2 text-xs font-mono text-slate-400">
+              <span class="material-symbols-outlined text-[15px]">school</span>
+              <span>Docente Evaluador: <strong>Luis Ángel Ramírez Mendoza</strong> · Universidad de La Guajira (2026-II)</span>
             </div>
           </div>
           <!-- Decorative subtle grid -->
@@ -975,7 +1020,7 @@ NOTA IMPORTANTE:
           <!-- Interactive Filter Table -->
           <div class="overflow-x-auto rounded-xl border border-surface-border bg-surface-card shadow-xs">
             <table class="w-full text-left text-xs text-surface-muted">
-              <thead class="bg-brand-900 text-white font-mono uppercase text-[11px] tracking-wider">
+              <thead class="bg-slate-900 text-white font-mono uppercase text-[11px] tracking-wider">
                 <tr>
                   <th class="p-3.5">Vulnerabilidad</th>
                   <th class="p-3.5">Categoría OWASP</th>
@@ -1187,8 +1232,8 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
         <!-- ================= FOOTER ================= -->
         <footer class="pt-10 border-t border-surface-border text-center text-xs text-surface-muted space-y-2">
           <p>© 2026 Universidad de La Guajira · Facultad de Ingeniería · Hacking Ético</p>
-          <p>Documento de auditoría académica y defensiva elaborado por <strong>Nelson Wilinton Cotes Yepez</strong> (Cód. 0182210015)</p>
-          <p class="font-mono text-[11px] text-surface-muted pt-1">Guía técnica y bitácora de auditoría · Nelson Cotes</p>
+          <p>Proyecto de Auditoría Técnica <strong>HackLog</strong> · Nelson Wilinton Cotes Yepez (0182210015) & Carlos Andrés Martínez Jáuregui (0002620001)</p>
+          <p class="font-mono text-[11px] text-surface-muted pt-1">Docente: Luis Ángel Ramírez Mendoza</p>
         </footer>
 
       </div>
@@ -1209,7 +1254,6 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
 
   <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
-    // Copy code button logic
     function copyCode(btn) {
       const pre = btn.closest('div.rounded-xl').querySelector('pre');
       const text = pre.innerText;
@@ -1222,7 +1266,6 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
       });
     }
 
-    // Lightbox modal logic
     function openLightbox(src, caption) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox-caption').innerText = caption;
@@ -1235,7 +1278,6 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // Theme switcher logic
     const themeBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     
@@ -1263,7 +1305,6 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
       applyTheme(!isDark);
     });
 
-    // Simple search filter in page
     const searchInput = document.getElementById('global-search');
     searchInput.addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
@@ -1277,7 +1318,6 @@ curl -X PUT "http://134.209.63.29:8080/api/subir.php?nombre=shell.php" -H "Cooki
       });
     });
 
-    // Ctrl+K shortcut
     document.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
